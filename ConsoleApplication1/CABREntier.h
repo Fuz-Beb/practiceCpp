@@ -7,7 +7,6 @@ public:
 	// Constructeurs / Destructeur
 	CABREntier();
 	CABREntier(CABREntier & param);
-	~CABREntier();
 
 	// Méthodes
 	void ABRAjouterElement(int iElement);
