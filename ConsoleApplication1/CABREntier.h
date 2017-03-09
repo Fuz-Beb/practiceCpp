@@ -3,13 +3,9 @@
 class CABREntier : public CArbreBinaireEntier
 {
 
-public:
-	// Constructeurs / Destructeur
-	CABREntier();
-	CABREntier(CABREntier & param);
+	public:
 
 	// Méthodes
 	void ABRAjouterElement(int iElement);
 	bool ABRRechercheElement(int iElement);
-
 };

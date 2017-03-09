@@ -1,5 +1,4 @@
-class CArbreBinaireEntier
-{
+class CArbreBinaireEntier {
 private:
 	// Attributs
 	int iABEElement;
@@ -19,6 +18,7 @@ public:
 	void ABEModifier_FilsGauche(CArbreBinaireEntier * pABEArbreBinaire);
 	CArbreBinaireEntier * ABELire_FilsDroit();
 	void ABEModifier_FilsDroit(CArbreBinaireEntier * pABEArbreBinaire);
-	// Si temps supplémentaire faire ABEViderArbre
+	void ABEVider_Arbre();
 
+	CArbreBinaireEntier & operator =(CArbreBinaireEntier & pABEArbreBinaire);
 };

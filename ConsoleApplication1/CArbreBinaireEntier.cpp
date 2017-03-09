@@ -39,6 +39,7 @@ CArbreBinaireEntier::CArbreBinaireEntier(CArbreBinaireEntier & pABEArbreBinaire)
 		pABEFilsDroit = NULL;
 	else
 		pABEFilsDroit = new CArbreBinaireEntier(*pABEArbreBinaire.pABEFilsDroit);
+
 }
 
 /*********************
@@ -83,7 +84,7 @@ Sortie : néant
 Entraine : affecte la valeur uiElement à iABEElement
 *********************/
 
-void CArbreBinaireEntier::ABEModifier_Element(CArbreBinaireEntier * pABEArbreBinaire, unsigned int uiElement)
+void CArbreBinaireEntier::ABEModifier_Element(unsigned int uiElement)
 {
 	iABEElement = uiElement;
 }
@@ -127,7 +128,7 @@ Entraine : Retourne la lecture du fils droit
 
 CArbreBinaireEntier * CArbreBinaireEntier::ABELire_FilsDroit()
 {
-	return pABEFilsGauche;
+	return pABEFilsDroit;
 }
 
 /*********************
@@ -142,4 +143,36 @@ Entraine : Modifie l'arbre binaire
 void CArbreBinaireEntier::ABEModifier_FilsDroit(CArbreBinaireEntier * pABEArbreBinaire)
 {
 	pABEFilsDroit = pABEArbreBinaire;
+}
+
+void CArbreBinaireEntier::ABEVider_Arbre()
+{
+	if(pABEFilsDroit != NULL){
+		pABEFilsDroit->ABEVider_Arbre();
+		delete pABEFilsDroit;
+	}
+
+	if(pABEFilsGauche != NULL){
+		pABEFilsGauche->ABEVider_Arbre();
+		delete pABEFilsGauche; 
+	}
+}
+
+
+CArbreBinaireEntier & CArbreBinaireEntier::operator=(CArbreBinaireEntier & pABEArbreBinaire)
+{
+
+	iABEElement = pABEArbreBinaire.iABEElement;
+	
+	if (pABEArbreBinaire.pABEFilsGauche == NULL)
+		pABEFilsGauche = NULL;
+	else
+		pABEFilsGauche = new CArbreBinaireEntier(*pABEArbreBinaire.pABEFilsGauche);
+
+	if (pABEArbreBinaire.pABEFilsDroit == NULL)
+		pABEFilsDroit = NULL;
+	else
+		pABEFilsDroit = new CArbreBinaireEntier(*pABEArbreBinaire.pABEFilsDroit);
+
+	return *this;
 }
