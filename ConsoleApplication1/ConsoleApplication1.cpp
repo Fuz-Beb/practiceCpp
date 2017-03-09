@@ -27,4 +27,13 @@ void main()
 
 	if(pCABREntierRecherche->ABRRechercheElement(11) == true)
 		cout << "Trouver !!!" << endl;
+
+
+	CABREntier * pCABREntierRechercheSurcharge = new CABREntier();
+
+	*pCABREntierRechercheSurcharge = *pCABREntierRecherche;
+
+	if(pCABREntierRechercheSurcharge->ABRRechercheElement(10) == true)
+		cout << "Surchage : Trouver !!!" << endl;
+
 }

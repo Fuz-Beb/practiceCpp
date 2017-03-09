@@ -161,7 +161,7 @@ void CArbreBinaireEntier::ABEVider_Arbre()
 
 CArbreBinaireEntier & CArbreBinaireEntier::operator=(CArbreBinaireEntier & pABEArbreBinaire)
 {
-
+	
 	iABEElement = pABEArbreBinaire.iABEElement;
 	
 	if (pABEArbreBinaire.pABEFilsGauche == NULL)
